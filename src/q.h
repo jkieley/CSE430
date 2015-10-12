@@ -6,20 +6,67 @@
 // RotateQ(&head) // Moves the header pointer to the next element in the queue. This is equivalent to AddQ(&head, DeleteQ(&head)), but is simpler to use and more efficient to implement.
 // Note: All the routines work on pointers. They do not copy q-elements. Also they to not allocate/deallocate space (except NewItem()). You may choose to implement a FreeItem(item) function – optional.
 
+#include <stdlib.h>
 
+// Structures
 typedef struct Item {
 	struct Item * prev;
 	struct Item * next;
 	int payload;
 } Item;
 
-typedef struct Que {
-	Item * head;
-} Que;
 
-
+// Required Functions
 Item * NewItem();
-Que * InitQueue(Item *);
+void InitQueue(Item *);
 void AddQueue(Item *, Item *);
 Item * DelQueue(Item *);
 void RotateQ(Item *);
+
+// Helper Functions
+void AddToEnd(Item * current, Item * toAdd);
+
+
+// Implementations:
+Item * NewItem()
+{
+	Item * item = (Item*)malloc(sizeof(Item));
+	return item;
+}
+
+void InitQueue(Item * head)
+{
+	head = NewItem();
+}
+
+void AddQueue(Item * head, Item * toAdd)
+{
+	AddToEnd(head,toAdd);
+}
+
+void AddToEnd(Item * current, Item * toAdd)
+{
+	if(current->next == NULL){
+		current->next = toAdd;
+	}else{
+		AddToEnd(current->next,toAdd);
+	}
+}
+
+Item * DelQueue(Item * head)
+{
+	Item * deleted = head;
+
+	head->next->prev = NULL;
+	head = head->next;
+
+	return deleted;
+}
+
+void RotateQ(Item * head)
+{
+	Item * prevHead = head;
+	head->next->prev = NULL;
+	head = head->next;
+	AddToEnd(head,prevHead);
+}
