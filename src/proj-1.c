@@ -40,8 +40,8 @@ int main(void) {
 	addResult(testInitQueue());
 	addResult(testAddQueue());
  	addResult(testDelQueue());
-//	addResult(testRotateQ());
-//	addResult(testDeleteLastItem());
+	addResult(testRotateQ());
+	addResult(testDeleteLastItem());
 	printResultes();
 
 	return EXIT_SUCCESS;
@@ -96,7 +96,19 @@ bool testDelQueue(){
     
     return firstCheck && secondCheck && thirdCheck;
 }
-bool testRotateQ(){ return false; }
+bool testRotateQ(){
+    TCB_t * head = NULL;
+    
+    TCB_t * newItem1 = NewItem();
+    TCB_t * newItem2 = NewItem();
+    AddQueue(&head, &newItem1);
+    AddQueue(&head, &newItem2);
+    
+    RotateQ(&head);
+    
+    return head == newItem2;
+}
+
 bool testDeleteLastItem(){ return false; }
 
 
