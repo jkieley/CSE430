@@ -94,7 +94,7 @@ void addResult(bool result)
 
 void printResultes()
 {
-	printf("%d Failures, %d Success",failures, successes);
+	printf("%d Failures, %d Success\n",failures, successes);
 }
 
 
