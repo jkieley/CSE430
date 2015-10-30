@@ -56,22 +56,21 @@ int main(void) {
 
 bool testNewItem()
 {
-	Item * item = NewItem();
-	item->payload = 0;
-	return item->payload == 0;
+	TCB_t * item = NewItem();
+	return item->next == NULL;
 }
 
 bool testInitQueue()
 {
-	Item * head = NULL;
+	TCB_t * head = NULL;
 	InitQueue(head);
 	return head == NULL;
 }
 
 bool testAddQueue()
 {
-	Item * head = NULL;
-	Item * item = NewItem();
+	TCB_t * head = NULL;
+	TCB_t * item = NewItem();
 	AddQueue(head,item);
 
 	return head != NULL;
