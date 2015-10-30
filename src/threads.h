@@ -20,7 +20,7 @@ void start_thread(void(*function)(void))
     TCB_t * item = NewItem();
 	//call init_TCB with appropriate arguments
 	init_TCB(item, function, s, 8192);
-	//call addQ to add this TCB into the “RunQ” which is a global header pointer
+	//call addQ to add this TCB into the ï¿½RunQï¿½ which is a global header pointer
     AddQueue(&RunQ, &item);
 	//end pseudo code
 }
@@ -38,13 +38,13 @@ void yield() // similar to run
     ucontext_t * current;
     ucontext_t * next;
     
-    current = RunQ;
+    current = &RunQ->context;
     
 //	rotate the run Q;
-    RotateQ(RunQ);
+    RotateQ(&RunQ);
 //	swap the context, from previous thread to the thread pointed to by RunQ
-    next = RunQ;
-    swapcontext(&current,&next);
+    next = &RunQ->context;
+    swapcontext(current,next);
 }
 
 
