@@ -11,13 +11,13 @@
 
 // Required Functions
 TCB_t * NewItem();
-void InitQueue(TCB_t *);
-void AddQueue(TCB_t *, TCB_t *);
-TCB_t * DelQueue(TCB_t *);
-void RotateQ(TCB_t *);
+void InitQueue(TCB_t **);
+void AddQueue(TCB_t **, TCB_t **);
+TCB_t * DelQueue(TCB_t **);
+void RotateQ(TCB_t **);
 
 // Helper Functions
-void AddToEnd(TCB_t * current, TCB_t * toAdd);
+void AddToEnd(TCB_t ** current, TCB_t ** toAdd);
 
 
 // Implementations:
@@ -27,43 +27,43 @@ TCB_t * NewItem()
 	return item;
 }
 
-void InitQueue(TCB_t * head)
+void InitQueue(TCB_t ** head)
 {
-	head = NULL;
+	*head = NULL;
 }
 
-void AddQueue(TCB_t * head, TCB_t * toAdd)
+void AddQueue(TCB_t ** head, TCB_t ** toAdd)
 {
-	if(head == NULL){
-		head = toAdd;
+	if(*head == NULL){
+		*head = *toAdd;
 	}else{
 		AddToEnd(head,toAdd);
 	}
 }
 
-void AddToEnd(TCB_t * current, TCB_t * toAdd)
+void AddToEnd(TCB_t ** current, TCB_t ** toAdd)
 {
-	if(current->next == NULL){
-		current->next = toAdd;
+	if((*current)->next == NULL){
+		(*current)->next = *toAdd;
 	}else{
-		AddToEnd(current->next,toAdd);
+		AddToEnd(&((*current)->next),toAdd);
 	}
 }
 
-TCB_t * DelQueue(TCB_t * head)
+TCB_t * DelQueue(TCB_t ** head)
 {
-	TCB_t * deleted = head;
+	TCB_t * deleted = *head;
 
-	head->next->prev = NULL;
-	head = head->next;
+	(*head)->next->prev = NULL;
+	*head = (*head)->next;
 
 	return deleted;
 }
 
-void RotateQ(TCB_t * head)
+void RotateQ(TCB_t ** head)
 {
-	TCB_t * prevHead = head;
-	head->next->prev = NULL;
-	head = head->next;
-	AddToEnd(head,prevHead);
+	TCB_t * prevHead = *head;
+	(*head)->next->prev = NULL;
+	*head = (*head)->next;
+	AddToEnd(head,&prevHead);
 }

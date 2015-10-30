@@ -23,6 +23,7 @@ int successes = 0;
 // function declarations
 void addResult(bool result);
 void printResultes();
+int countItems(TCB_t * head);
 
 // tests
 bool testNewItem();
@@ -38,9 +39,9 @@ int main(void) {
 	addResult(testNewItem());
 	addResult(testInitQueue());
 	addResult(testAddQueue());
-	addResult(testDelQueue());
-	addResult(testRotateQ());
-	addResult(testDeleteLastItem());
+//	addResult(testDelQueue());
+//	addResult(testRotateQ());
+//	addResult(testDeleteLastItem());
 	printResultes();
 
 	return EXIT_SUCCESS;
@@ -64,7 +65,7 @@ bool testNewItem()
 bool testInitQueue()
 {
 	TCB_t * head = NULL;
-	InitQueue(head);
+	InitQueue(&head);
 	return head == NULL;
 }
 
@@ -72,11 +73,24 @@ bool testAddQueue()
 {
 	TCB_t * head = NULL;
 	TCB_t * item = NewItem();
-	AddQueue(head,item);
+	AddQueue(&head,&item);
 
-	return head != NULL;
+	return head == item;
 }
-bool testDelQueue(){ return false; }
+bool testDelQueue(){
+    bool firstCheck = false;
+    bool secondCheck = false;
+    
+    TCB_t * head = NULL;
+    AddQueue(head, NewItem());
+    AddQueue(head, NewItem());
+    firstCheck = countItems(head) == 2;
+    
+    DelQueue(head);
+    secondCheck = countItems(head) == 2;
+    
+    return firstCheck && secondCheck;
+}
 bool testRotateQ(){ return false; }
 bool testDeleteLastItem(){ return false; }
 
@@ -95,6 +109,21 @@ void addResult(bool result)
 void printResultes()
 {
 	printf("%d Failures, %d Success\n",failures, successes);
+}
+
+int countItems(TCB_t * head){
+    int count = 0;
+    if (head == NULL) {
+        return count;
+    }else{
+        count++; // head is not null
+        TCB_t * current = head;
+        while (current->next != NULL) {
+            count++;
+            current = current->next;
+        }
+    }
+    return count;
 }
 
 
