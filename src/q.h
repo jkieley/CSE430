@@ -7,39 +7,32 @@
 // Note: All the routines work on pointers. They do not copy q-elements. Also they to not allocate/deallocate space (except NewItem()). You may choose to implement a FreeItem(item) function – optional.
 
 #include <stdlib.h>
-
-// Structures
-typedef struct Item {
-	struct Item * prev;
-	struct Item * next;
-	int payload;
-} Item;
-
+#include "tcb.h"
 
 // Required Functions
-Item * NewItem();
-void InitQueue(Item *);
-void AddQueue(Item *, Item *);
-Item * DelQueue(Item *);
-void RotateQ(Item *);
+TCB_t * NewItem();
+void InitQueue(TCB_t *);
+void AddQueue(TCB_t *, TCB_t *);
+TCB_t * DelQueue(TCB_t *);
+void RotateQ(TCB_t *);
 
 // Helper Functions
-void AddToEnd(Item * current, Item * toAdd);
+void AddToEnd(TCB_t * current, TCB_t * toAdd);
 
 
 // Implementations:
-Item * NewItem()
+TCB_t * NewItem()
 {
-	Item * item = (Item*)malloc(sizeof(Item));
+	TCB_t * item = (TCB_t*)malloc(sizeof(TCB_t));
 	return item;
 }
 
-void InitQueue(Item * head)
+void InitQueue(TCB_t * head)
 {
 	head = NULL;
 }
 
-void AddQueue(Item * head, Item * toAdd)
+void AddQueue(TCB_t * head, TCB_t * toAdd)
 {
 	if(head == NULL){
 		head = toAdd;
@@ -48,7 +41,7 @@ void AddQueue(Item * head, Item * toAdd)
 	}
 }
 
-void AddToEnd(Item * current, Item * toAdd)
+void AddToEnd(TCB_t * current, TCB_t * toAdd)
 {
 	if(current->next == NULL){
 		current->next = toAdd;
@@ -57,9 +50,9 @@ void AddToEnd(Item * current, Item * toAdd)
 	}
 }
 
-Item * DelQueue(Item * head)
+TCB_t * DelQueue(TCB_t * head)
 {
-	Item * deleted = head;
+	TCB_t * deleted = head;
 
 	head->next->prev = NULL;
 	head = head->next;
@@ -67,9 +60,9 @@ Item * DelQueue(Item * head)
 	return deleted;
 }
 
-void RotateQ(Item * head)
+void RotateQ(TCB_t * head)
 {
-	Item * prevHead = head;
+	TCB_t * prevHead = head;
 	head->next->prev = NULL;
 	head = head->next;
 	AddToEnd(head,prevHead);
