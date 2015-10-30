@@ -74,9 +74,11 @@ TCB_t * DelQueue(TCB_t ** head)
 void RotateQ(TCB_t ** head)
 {
 	TCB_t * prevHead = *head;
-	(*head)->next->prev = NULL;
-	*head = (*head)->next;
-	AddToEnd(head,&prevHead);
+	if((*head)->next != NULL){
+		(*head)->next->prev = NULL;
+		*head = (*head)->next;
+		AddToEnd(head,&prevHead);
+	}
 }
 
 
