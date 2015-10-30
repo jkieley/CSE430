@@ -36,12 +36,16 @@ Item * NewItem()
 
 void InitQueue(Item * head)
 {
-	head = NewItem();
+	head = NULL;
 }
 
 void AddQueue(Item * head, Item * toAdd)
 {
-	AddToEnd(head,toAdd);
+	if(head == NULL){
+		head = toAdd;
+	}else{
+		AddToEnd(head,toAdd);
+	}
 }
 
 void AddToEnd(Item * current, Item * toAdd)
