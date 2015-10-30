@@ -6,8 +6,16 @@
 // RotateQ(&head) // Moves the header pointer to the next element in the queue. This is equivalent to AddQ(&head, DeleteQ(&head)), but is simpler to use and more efficient to implement.
 // Note: All the routines work on pointers. They do not copy q-elements. Also they to not allocate/deallocate space (except NewItem()). You may choose to implement a FreeItem(item) function – optional.
 
+#ifndef q
+#define q
+
+
 #include <stdlib.h>
 #include "tcb.h"
+
+
+TCB_t * RunQ;
+
 
 // Required Functions
 TCB_t * NewItem();
@@ -23,7 +31,7 @@ void AddToEnd(TCB_t ** current, TCB_t ** toAdd);
 // Implementations:
 TCB_t * NewItem()
 {
-	TCB_t * item = (TCB_t*)malloc(sizeof(TCB_t));
+	TCB_t * item = (TCB_t *) malloc(sizeof(TCB_t));
 	return item;
 }
 
@@ -70,3 +78,6 @@ void RotateQ(TCB_t ** head)
 	*head = (*head)->next;
 	AddToEnd(head,&prevHead);
 }
+
+
+#endif /* q */

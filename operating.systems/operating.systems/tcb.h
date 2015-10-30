@@ -9,6 +9,7 @@
 #ifndef tcb_h
 #define tcb_h
 
+#define _XOPEN_SOURCE 600
 #include <ucontext.h>
 
 typedef struct TCB_t {

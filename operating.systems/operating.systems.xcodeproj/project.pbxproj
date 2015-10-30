@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D42685AA1BE2F97C0082CA2F /* operating-systems-project-1.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685A71BE2F97C0082CA2F /* operating-systems-project-1.c */; };
-		D42685AB1BE2F97C0082CA2F /* proj-1.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685A81BE2F97C0082CA2F /* proj-1.c */; };
+		D42685B11BE31F500082CA2F /* thread_test.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685AE1BE318290082CA2F /* thread_test.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +30,8 @@
 		D42685A81BE2F97C0082CA2F /* proj-1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "proj-1.c"; path = "../../src/proj-1.c"; sourceTree = "<group>"; };
 		D42685A91BE2F97C0082CA2F /* q.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = q.h; path = ../../src/q.h; sourceTree = "<group>"; };
 		D42685AC1BE2FC980082CA2F /* tcb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcb.h; sourceTree = "<group>"; };
+		D42685AD1BE316BA0082CA2F /* threads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = threads.h; path = ../../src/threads.h; sourceTree = "<group>"; };
+		D42685AE1BE318290082CA2F /* thread_test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thread_test.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +65,12 @@
 		D426859E1BE2F21F0082CA2F /* operating.systems */ = {
 			isa = PBXGroup;
 			children = (
+				D42685AD1BE316BA0082CA2F /* threads.h */,
 				D42685A71BE2F97C0082CA2F /* operating-systems-project-1.c */,
 				D42685A81BE2F97C0082CA2F /* proj-1.c */,
 				D42685A91BE2F97C0082CA2F /* q.h */,
 				D42685AC1BE2FC980082CA2F /* tcb.h */,
+				D42685AE1BE318290082CA2F /* thread_test.c */,
 			);
 			path = operating.systems;
 			sourceTree = "<group>";
@@ -127,8 +131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42685B11BE31F500082CA2F /* thread_test.c in Sources */,
 				D42685AA1BE2F97C0082CA2F /* operating-systems-project-1.c in Sources */,
-				D42685AB1BE2F97C0082CA2F /* proj-1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
