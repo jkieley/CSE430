@@ -109,7 +109,18 @@ bool testRotateQ(){
     return head == newItem2;
 }
 
-bool testDeleteLastItem(){ return false; }
+bool testDeleteLastItem(){
+    TCB_t * head = NULL;
+    TCB_t * newItem1 = NewItem();
+    TCB_t * newItem2 = NewItem();
+    AddQueue(&head, &newItem1);
+    AddQueue(&head, &newItem2);
+
+    TCB_t * deleted1 = DelQueue(&head);
+    TCB_t * deleted2 = DelQueue(&head);
+    
+    return deleted2 == newItem2;
+}
 
 
 void addResult(bool result)
