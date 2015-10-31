@@ -23,11 +23,11 @@ int main(void) {
     
     InitQueue(&RunQ);
     
-//    start_thread(*loop1);
-//    start_thread(*loop2);
-//    start_thread(*loop3);
-//    start_thread(*loop4);
-//    start_thread(*loop5);
+    start_thread(*loop1);
+    start_thread(*loop2);
+    start_thread(*loop3);
+    start_thread(*loop4);
+    start_thread(*loop5);
     
     
     return EXIT_SUCCESS;

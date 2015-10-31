@@ -18,6 +18,7 @@ void loop3();
 void loop4();
 void loop5();
 
+int globalCounter = 0;
 
 int main(void) {
     
@@ -26,12 +27,11 @@ int main(void) {
     printf("\nstarting...\n");
     start_thread(*loop1);
     start_thread(*loop2);
-//    start_thread(*loop3);
-//    start_thread(*loop4);
-//    start_thread(*loop5);
+    start_thread(*loop3);
+    start_thread(*loop4);
+    start_thread(*loop5);
     
     run();
-    printf("ending...");
     return EXIT_SUCCESS;
 }
 
@@ -41,9 +41,16 @@ void loop1(){
         if(i > 100){
             i = 0;
         }
+
+        if(globalCounter > 1000){
+            globalCounter = 0;
+        }
+
         yield();
-        i++;
+        i++; // local variable
+        globalCounter++; // global variable
         printf("loop1! %d",i);
+        printf("globalCounter! %d",globalCounter);
     }
 }
 
@@ -53,9 +60,16 @@ void loop2(){
         if(i > 100){
             i = 0;
         }
+
+        if(globalCounter > 1000){
+            globalCounter = 0;
+        }
+
         yield();
-        i++;
+        i++; // local variable
+        globalCounter++; // global variable
         printf("loop2! %d",i);
+        printf("globalCounter! %d",globalCounter);
     }
 }
 
@@ -65,9 +79,16 @@ void loop3(){
         if(i > 100){
             i = 0;
         }
+
+        if(globalCounter > 1000){
+            globalCounter = 0;
+        }
+
         yield();
-        i++;
+        i++; // local variable
+        globalCounter++; // global variable
         printf("loop3! %d",i);
+        printf("globalCounter! %d",globalCounter);
     }
 }
 
@@ -77,9 +98,16 @@ void loop4(){
         if(i > 100){
             i = 0;
         }
+
+        if(globalCounter > 1000){
+            globalCounter = 0;
+        }
+
         yield();
-        i++;
+        i++; // local variable
+        globalCounter++; // global variable
         printf("loop4! %d",i);
+        printf("globalCounter! %d",globalCounter);
     }
 }
 
@@ -89,9 +117,16 @@ void loop5(){
         if(i > 100){
             i = 0;
         }
+
+        if(globalCounter > 1000){
+            globalCounter = 0;
+        }
+
         yield();
-        i++;
+        i++; // local variable
+        globalCounter++; // global variable
         printf("loop5! %d",i);
+        printf("globalCounter! %d",globalCounter);
     }
 }
 
