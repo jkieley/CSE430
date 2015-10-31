@@ -4,7 +4,7 @@
  Author      : James Kieley
  Version     :
  Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ Description : Used to test on the functions created in Project 1
  ============================================================================
  */
 

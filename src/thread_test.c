@@ -1,10 +1,13 @@
-//
-//  thread_test.c
-//  operating.systems
-//
-//  Created by James Kieley on 10/29/15.
-//  Copyright © 2015 James Kieley. All rights reserved.
-//
+/*
+ ============================================================================
+ Name        : operating-systems-project-1.c
+ Author      : James Kieley, Alexis Montiel
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Contains the main() function as intructed for Project 2. Please ensure that only 
+               one main function is included at compile and run time. 
+ ============================================================================
+ */
 
 #include <stdio.h>
 #include "threads.h"

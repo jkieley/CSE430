@@ -1,3 +1,14 @@
+/*
+ ============================================================================
+ Name        : operating-systems-project-1.c
+ Author      : James Kieley, Alexis Montiel
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Contains the all the functions that are used to a link list,
+ 			   and perform operations on that link list
+ ============================================================================
+ */
+
 // The functions that you implement are:
 // item = NewItem(); // returns a pointer to a new q-element
 // InitQueue( &head) // creates a empty queue, pointed to by the variable head.
