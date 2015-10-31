@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D42685AA1BE2F97C0082CA2F /* operating-systems-project-1.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685A71BE2F97C0082CA2F /* operating-systems-project-1.c */; };
-		D42685B11BE31F500082CA2F /* thread_test.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685AE1BE318290082CA2F /* thread_test.c */; };
+		D4A0BE881BE555FD001B0B6F /* proj-1.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685A81BE2F97C0082CA2F /* proj-1.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		D426859C1BE2F21F0082CA2F /* operating.systems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = operating.systems; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42685A61BE2F2310082CA2F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../src; sourceTree = "<group>"; };
-		D42685A71BE2F97C0082CA2F /* operating-systems-project-1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "operating-systems-project-1.c"; path = "../../src/operating-systems-project-1.c"; sourceTree = "<group>"; };
 		D42685A81BE2F97C0082CA2F /* proj-1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "proj-1.c"; path = "../../src/proj-1.c"; sourceTree = "<group>"; };
 		D42685A91BE2F97C0082CA2F /* q.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = q.h; path = ../../src/q.h; sourceTree = "<group>"; };
 		D42685AC1BE2FC980082CA2F /* tcb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcb.h; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				D42685AD1BE316BA0082CA2F /* threads.h */,
-				D42685A71BE2F97C0082CA2F /* operating-systems-project-1.c */,
 				D42685A81BE2F97C0082CA2F /* proj-1.c */,
 				D42685A91BE2F97C0082CA2F /* q.h */,
 				D42685AC1BE2FC980082CA2F /* tcb.h */,
@@ -131,8 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42685B11BE31F500082CA2F /* thread_test.c in Sources */,
-				D42685AA1BE2F97C0082CA2F /* operating-systems-project-1.c in Sources */,
+				D4A0BE881BE555FD001B0B6F /* proj-1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +247,7 @@
 				D42685A51BE2F21F0082CA2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
