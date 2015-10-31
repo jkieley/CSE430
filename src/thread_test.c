@@ -49,8 +49,8 @@ void loop1(){
         yield();
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop1! %d",i);
-        printf("globalCounter! %d",globalCounter);
+        printf("loop1! %d\n",i);
+        printf("globalCounter! %d\n",globalCounter);
     }
 }
 
@@ -68,8 +68,8 @@ void loop2(){
         yield();
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop2! %d",i);
-        printf("globalCounter! %d",globalCounter);
+        printf("loop2! %d\n",i);
+        printf("globalCounter! %d\n",globalCounter);
     }
 }
 
@@ -87,8 +87,8 @@ void loop3(){
         yield();
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop3! %d",i);
-        printf("globalCounter! %d",globalCounter);
+        printf("loop3! %d\n",i);
+        printf("globalCounter! %d\n",globalCounter);
     }
 }
 
@@ -106,8 +106,8 @@ void loop4(){
         yield();
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop4! %d",i);
-        printf("globalCounter! %d",globalCounter);
+        printf("loop4! %d\n",i);
+        printf("globalCounter! %d\n",globalCounter);
     }
 }
 
@@ -125,8 +125,8 @@ void loop5(){
         yield();
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop5! %d",i);
-        printf("globalCounter! %d",globalCounter);
+        printf("loop5! %d\n",i);
+        printf("globalCounter! %d\n",globalCounter);
     }
 }
 
