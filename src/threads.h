@@ -10,7 +10,7 @@
  */
 
 #ifndef THREADS_H_
-#define THREADS _H_
+#define THREADS_H_
 
 #include <stdlib.h>
 #define _XOPEN_SOURCE 600
