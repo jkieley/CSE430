@@ -15,8 +15,9 @@ void V(semaphore_t ** semaphore);
 
 void InitSem(semaphore_t ** semaphore, int value)
 {
+	*semaphore = (semaphore_t *) malloc(sizeof(semaphore_t));
 	(*semaphore)->count = value;
-    (*semaphore)->que = NULL;
+    InitQueue(&(*semaphore)->que);
 }
 
 void P(semaphore_t **  semaphore)
