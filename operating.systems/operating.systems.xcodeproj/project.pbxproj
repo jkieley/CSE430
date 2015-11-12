@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4A0BE881BE555FD001B0B6F /* proj-1.c in Sources */ = {isa = PBXBuildFile; fileRef = D42685A81BE2F97C0082CA2F /* proj-1.c */; };
+		D4B4B5C71BF4125100C15D89 /* thread_test.c in Sources */ = {isa = PBXBuildFile; fileRef = D4B4B5C61BF4125100C15D89 /* thread_test.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,11 +25,11 @@
 /* Begin PBXFileReference section */
 		D426859C1BE2F21F0082CA2F /* operating.systems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = operating.systems; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42685A61BE2F2310082CA2F /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../src; sourceTree = "<group>"; };
-		D42685A81BE2F97C0082CA2F /* proj-1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "proj-1.c"; path = "../../src/proj-1.c"; sourceTree = "<group>"; };
 		D42685A91BE2F97C0082CA2F /* q.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = q.h; path = ../../src/q.h; sourceTree = "<group>"; };
 		D42685AC1BE2FC980082CA2F /* tcb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tcb.h; sourceTree = "<group>"; };
 		D42685AD1BE316BA0082CA2F /* threads.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = threads.h; path = ../../src/threads.h; sourceTree = "<group>"; };
-		D42685AE1BE318290082CA2F /* thread_test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = thread_test.c; sourceTree = "<group>"; };
+		D4B4B5C51BF411FD00C15D89 /* semaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = semaphore.h; path = ../../src/semaphore.h; sourceTree = "<group>"; };
+		D4B4B5C61BF4125100C15D89 /* thread_test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = thread_test.c; path = ../../src/thread_test.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +63,11 @@
 		D426859E1BE2F21F0082CA2F /* operating.systems */ = {
 			isa = PBXGroup;
 			children = (
+				D4B4B5C61BF4125100C15D89 /* thread_test.c */,
+				D4B4B5C51BF411FD00C15D89 /* semaphore.h */,
 				D42685AD1BE316BA0082CA2F /* threads.h */,
-				D42685A81BE2F97C0082CA2F /* proj-1.c */,
 				D42685A91BE2F97C0082CA2F /* q.h */,
 				D42685AC1BE2FC980082CA2F /* tcb.h */,
-				D42685AE1BE318290082CA2F /* thread_test.c */,
 			);
 			path = operating.systems;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A0BE881BE555FD001B0B6F /* proj-1.c in Sources */,
+				D4B4B5C71BF4125100C15D89 /* thread_test.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
