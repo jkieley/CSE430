@@ -14,6 +14,7 @@
 #include "q.h"
 #include "tcb.h"
 #include <ucontext.h>
+#include "semaphore.h"
 
 void loop1();
 void loop2();
@@ -25,16 +26,7 @@ int globalCounter = 0;
 
 int main(void) {
     
-    InitQueue(&RunQ);
     
-    printf("\nstarting...\n");
-    start_thread(*loop1);
-    start_thread(*loop2);
-    start_thread(*loop3);
-    start_thread(*loop4);
-    start_thread(*loop5);
-    
-    run();
     return EXIT_SUCCESS;
 }
 
