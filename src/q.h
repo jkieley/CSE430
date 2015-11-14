@@ -55,6 +55,7 @@ void AddQueue(TCB_t ** head, TCB_t ** toAdd)
 {
 	if(*head == NULL){
 		*head = *toAdd;
+		printf("setting head to: %p\n",*head);
 	}else{
 		AddToEnd(head,toAdd);
 	}
@@ -79,6 +80,9 @@ TCB_t * DelQueue(TCB_t ** head)
 
     *head = (*head)->next;
 
+    deleted->next = NULL;
+    deleted->prev = NULL;
+
 	return deleted;
 }
 
@@ -90,6 +94,18 @@ void RotateQ(TCB_t ** head)
 		*head = (*head)->next;
 		prevHead->next = NULL;
 		AddToEnd(head,&prevHead);
+	}
+}
+
+void printQue(TCB_t ** node){
+	printf("\n");
+	printNode(node);
+}
+
+void printNode(TCB_t ** node){
+	if(*node != NULL){
+		printf("%p->",*node);
+		printNode(&(*node)->next);
 	}
 }
 

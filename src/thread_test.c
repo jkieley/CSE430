@@ -23,7 +23,6 @@ void loop4();
 void loop5();
 
 int globalCounter = 0;
-semaphore_t * sem;
 
 int main(void) {
 
@@ -62,7 +61,7 @@ void loop1(){
         V(&sem);
         //ending CS
         printf("Sleep1");
-        V(&sem);
+        //V(&sem);
     }
 }
 
@@ -87,7 +86,7 @@ void loop2(){
         V(&sem);
         //ending CS
         printf("Sleep2");
-        V(&sem);
+        //V(&sem);
     }
 }
 
@@ -112,7 +111,7 @@ void loop3(){
         V(&sem);
         //ending CS
         printf("Sleep3");
-        V(&sem);
+        //V(&sem);
     }
 }
 
@@ -137,7 +136,7 @@ void loop4(){
         V(&sem);
         //ending CS
         printf("Sleep4");
-        V(&sem);
+        //V(&sem);
     }
 }
 
@@ -162,7 +161,7 @@ void loop5(){
         V(&sem);
         //ending CS
         printf("Sleep5");
-        V(&sem);
+        //V(&sem);
     }
 }
 
