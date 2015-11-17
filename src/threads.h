@@ -34,7 +34,7 @@ void start_thread(void(*function)(void), const char * name)
 	init_TCB(item, function, s, 8192,name);
 	//call addQ to add this TCB into the �RunQ� which is a global header pointer
     AddQueue(&RunQ, &item);
-    printQue(&RunQ);
+    //printQue(&RunQ);
 	//end pseudo code
 }
 
