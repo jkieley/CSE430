@@ -42,8 +42,7 @@ void AddToEnd(TCB_t ** current, TCB_t ** toAdd);
 // Implementations:
 TCB_t * NewItem()
 {
-	TCB_t * item = (TCB_t *) malloc(sizeof(TCB_t));
-	return item;
+	return (TCB_t *) malloc(sizeof(TCB_t));
 }
 
 void InitQueue(TCB_t ** head)
@@ -55,7 +54,7 @@ void AddQueue(TCB_t ** head, TCB_t ** toAdd)
 {
 	if(*head == NULL){
 		*head = *toAdd;
-		printf("setting head to: %p\n",*head);
+		//printf("\nsetting head to: %p",*head);
 	}else{
 		AddToEnd(head,toAdd);
 	}
@@ -104,7 +103,8 @@ void printQue(TCB_t ** node){
 
 void printNode(TCB_t ** node){
 	if(*node != NULL){
-		printf("%p->",*node);
+		printf("%s->",(*node)->name);
+		fflush(stdout);
 		printNode(&(*node)->next);
 	}
 }

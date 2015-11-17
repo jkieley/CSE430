@@ -30,12 +30,21 @@ int main(void) {
 	InitSem(&sem, 0);
 
     printf("\nstarting...\n");
-    start_thread(*loop1);
-    start_thread(*loop2);
-    start_thread(*loop3);
-    start_thread(*loop4);
-    start_thread(*loop5);
+    const char * loop1Name = "loop1";
+    start_thread(*loop1, loop1Name);
+
+    const char * loop2Name = "loop2";
+    start_thread(*loop2, loop2Name);
+
+    const char * loop3Name = "loop3";
+    start_thread(*loop3, loop3Name);
+
+    const char * loop4Name = "loop4";
+    start_thread(*loop4, loop4Name);
     
+    const char * loop5Name = "loop5";
+    start_thread(*loop5, loop5Name);
+
     run();
     return EXIT_SUCCESS;
 }
@@ -56,12 +65,9 @@ void loop1(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop1! %d\n",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop1! %d",i);
+        //printf("globalCounter! %d\n",globalCounter);
         V(&sem);
-        //ending CS
-        printf("Sleep1");
-        //V(&sem);
     }
 }
 
@@ -81,12 +87,9 @@ void loop2(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop2! %d\n",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop2! %d",i);
+        //printf("globalCounter! %d\n",globalCounter);
         V(&sem);
-        //ending CS
-        printf("Sleep2");
-        //V(&sem);
     }
 }
 
@@ -106,12 +109,9 @@ void loop3(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop3! %d\n",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop3! %d",i);
+        //printf("globalCounter! %d\n",globalCounter);
         V(&sem);
-        //ending CS
-        printf("Sleep3");
-        //V(&sem);
     }
 }
 
@@ -131,12 +131,9 @@ void loop4(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop4! %d\n",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop4! %d",i);
+        //printf("globalCounter! %d\n",globalCounter);
         V(&sem);
-        //ending CS
-        printf("Sleep4");
-        //V(&sem);
     }
 }
 
@@ -156,12 +153,9 @@ void loop5(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("loop5! %d\n",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop5! %d",i);
+        //printf("globalCounter! %d\n",globalCounter);
         V(&sem);
-        //ending CS
-        printf("Sleep5");
-        //V(&sem);
     }
 }
 

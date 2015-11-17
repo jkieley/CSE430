@@ -18,22 +18,23 @@
 #include "q.h"
 
 
-void start_thread(void(*function)(void));
+void start_thread(void(*function)(void), const char *);
 void run();
 void yield();
 
-void start_thread(void(*function)(void))
+void start_thread(void(*function)(void), const char * name)
 { // begin pseudo code
 	
 	//allocate a stack(via malloc) of a certain size(choose 8192)
 	void *s = malloc(8192);
 	//allocate a TCB(via malloc)
     TCB_t * item = NewItem();
-	//call init_TCB with appropriate arguments
-	init_TCB(item, function, s, 8192);
+
+    //call init_TCB with appropriate arguments
+	init_TCB(item, function, s, 8192,name);
 	//call addQ to add this TCB into the �RunQ� which is a global header pointer
-	printQue(&RunQ);
     AddQueue(&RunQ, &item);
+    printQue(&RunQ);
 	//end pseudo code
 }
 
