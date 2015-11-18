@@ -25,24 +25,21 @@ void loop5();
 int globalCounter = 0;
 
 int main(void) {
+    const char * loop1Name = "loop1";
+    const char * loop2Name = "loop2";
+    const char * loop3Name = "loop3";
+    const char * loop4Name = "loop4";
+    const char * loop5Name = "loop5";
+
 
 	InitQueue(&RunQ);
 	InitSem(&sem, 0);
 
     printf("\nstarting...\n");
-    const char * loop1Name = "loop1";
     start_thread(*loop1, loop1Name);
-
-    const char * loop2Name = "loop2";
     start_thread(*loop2, loop2Name);
-
-    const char * loop3Name = "loop3";
     start_thread(*loop3, loop3Name);
-
-    const char * loop4Name = "loop4";
     start_thread(*loop4, loop4Name);
-    
-    const char * loop5Name = "loop5";
     start_thread(*loop5, loop5Name);
 
     run();

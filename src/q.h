@@ -109,5 +109,18 @@ void printNode(TCB_t ** node){
 	}
 }
 
+int getLength(TCB_t ** node){
+	int size = 0;
+	countNodes(node, &size);
+	return size;
+}
+
+void countNodes(TCB_t ** node, int * size){
+	if(*node != NULL){
+		(*size)++;
+		countNodes(&(*node)->next,size);
+	}
+}
+
 
 #endif /* q */

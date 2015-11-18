@@ -29,26 +29,30 @@ void P(semaphore_t **  semaphore)
 //	printf("\nsemaphore inc count: %d", (*semaphore)->count);
 	if((*semaphore)->count > -5){
 
-//		printf("\nbefore");
-//		printf("\n::Semaphore Que::");
-//		printQue(&(*semaphore)->que);
-//		printf("\n::Run Que::");
-//		printQue(&RunQ);
+		printf("\nbefore");
+		printf("\n::Semaphore Que::");
+		printQue(&(*semaphore)->que);
+		printf("\n::Run Que::");
+		printQue(&RunQ);
 
 
 		this = DelQueue(&RunQ);
 		AddQueue(&(*semaphore)->que,&this);
+
+		printf("\nsemaphore length: %d", getLength(&(*semaphore)->que));
+		printf("\nRunQ length: %d", getLength(&RunQ));
+
 
 		if(RunQ == NULL){
 			printf("breaks here?");
 			return;
 		}
 
-//		printf("\nafter");
-//		printf("\n::Semaphore Que::");
-//		printQue(&(*semaphore)->que);
-//		printf("\n::Run Que::");
-//		printQue(&RunQ);
+		printf("\nafter");
+		printf("\n::Semaphore Que::");
+		printQue(&(*semaphore)->que);
+		printf("\n::Run Que::");
+		printQue(&RunQ);
 
 //		printf("from: %s, to: %s\n", this->name, RunQ->name);
 		swapcontext(&this->context,&RunQ->context);
@@ -63,21 +67,24 @@ void V(semaphore_t **  semaphore)
 //	printf("\nsemaphore dec count: %d", (*semaphore)->count);
 	if((*semaphore)->count <= 0){
 
-//		printf("\nbefore");
-//		printf("\n::Semaphore Que::");
-//		printQue(&(*semaphore)->que);
-//		printf("\n::Run Que::");
-//		printQue(&RunQ);
+		printf("\nbefore");
+		printf("\n::Semaphore Que::");
+		printQue(&(*semaphore)->que);
+		printf("\n::Run Que::");
+		printQue(&RunQ);
 
 
 		this = DelQueue(&(*semaphore)->que);
 		AddQueue(&RunQ,&this);
 
-//		printf("\nafter");
-//		printf("\n::Semaphore Que::");
-//		printQue(&(*semaphore)->que);
-//		printf("\n::Run Que::");
-//		printQue(&RunQ);
+		printf("\nsemaphore length: %d", getLength(&(*semaphore)->que));
+		printf("\nRunQ length: %d", getLength(&RunQ));
+
+		printf("\nafter");
+		printf("\n::Semaphore Que::");
+		printQue(&(*semaphore)->que);
+		printf("\n::Run Que::");
+		printQue(&RunQ);
 
 		yield();
 	}
