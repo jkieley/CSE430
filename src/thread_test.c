@@ -16,11 +16,14 @@
 #include <ucontext.h>
 #include "semaphore.h"
 
+#define SLEEP_TIME 1
+
 void loop1();
 void loop2();
 void loop3();
 void loop4();
 void loop5();
+void loop6();
 
 int globalCounter = 0;
 
@@ -33,7 +36,7 @@ int main(void) {
 
 
 	InitQueue(&RunQ);
-	InitSem(&sem, 0);
+	InitSem(&sem, 4);
 
     printf("\nstarting...\n");
     start_thread(*loop1, loop1Name);
@@ -51,6 +54,7 @@ void loop1(){
 	int i=0;
     while (1) {
     	P(&sem);
+    	sleep(SLEEP_TIME);
     	//start of CS
         if(i > 100){
             i = 0;
@@ -62,8 +66,8 @@ void loop1(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop1! %d",i);
-        //printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop1!!!!!!!!!!!!!! %d",i);
+        printf("globalCounter! %d\n",globalCounter);
         V(&sem);
     }
 }
@@ -73,6 +77,7 @@ void loop2(){
 	int i=0;
     while (1) {
     	P(&sem);
+    	sleep(SLEEP_TIME);
     	//start of CS
         if(i > 100){
             i = 0;
@@ -84,8 +89,8 @@ void loop2(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop2! %d",i);
-        //printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop2!!!!!!!!!!!!!! %d",i);
+        printf("globalCounter! %d\n",globalCounter);
         V(&sem);
     }
 }
@@ -95,6 +100,7 @@ void loop3(){
 	int i=0;
     while (1) {
     	P(&sem);
+    	sleep(SLEEP_TIME);
     	//start of CS
         if(i > 100){
             i = 0;
@@ -106,8 +112,8 @@ void loop3(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop3! %d",i);
-        //printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop3!!!!!!!!!!!!!! %d",i);
+        printf("globalCounter! %d\n",globalCounter);
         V(&sem);
     }
 }
@@ -117,6 +123,7 @@ void loop4(){
 	int i=0;
     while (1) {
     	P(&sem);
+    	sleep(SLEEP_TIME);
     	//start of CS
         if(i > 100){
             i = 0;
@@ -128,8 +135,8 @@ void loop4(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop4! %d",i);
-        //printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop4!!!!!!!!!!!!!! %d",i);
+        printf("globalCounter! %d\n",globalCounter);
         V(&sem);
     }
 }
@@ -139,6 +146,7 @@ void loop5(){
 	int i=0;
     while (1) {
     	P(&sem);
+    	sleep(SLEEP_TIME);
     	//start of CS
         if(i > 100){
             i = 0;
@@ -150,8 +158,8 @@ void loop5(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop5! %d",i);
-        //printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop5!!!!!!!!!!!!!! %d",i);
+        printf("globalCounter! %d\n",globalCounter);
         V(&sem);
     }
 }

@@ -26,27 +26,28 @@ void P(semaphore_t **  semaphore)
 {
 	TCB_t * this;
 	(*semaphore)->count--;
-//	printf("\nsemaphore inc count: %d", (*semaphore)->count);
-	if((*semaphore)->count > -5){
+	printf("\n *******P******* semaphore inc count: %d", (*semaphore)->count);
+	if((*semaphore)->count < 0){
+	//if(0){
 
 		printf("\nbefore");
-		printf("\n::Semaphore Que::");
-		printQue(&(*semaphore)->que);
-		printf("\n::Run Que::");
-		printQue(&RunQ);
+		 printf("\n::Semaphore Que::");
+		 printQue(&(*semaphore)->que);
+		 printf("\n::Run Que::");
+		 printQue(&RunQ);
 
 
 		this = DelQueue(&RunQ);
 		AddQueue(&(*semaphore)->que,&this);
 
-		printf("\nsemaphore length: %d", getLength(&(*semaphore)->que));
-		printf("\nRunQ length: %d", getLength(&RunQ));
+		// printf("\nS length: %d", getLength(&(*semaphore)->que));
+		// printf("\nR length: %d", getLength(&RunQ));
 
 
-		if(RunQ == NULL){
-			printf("breaks here?");
-			return;
-		}
+		// if(RunQ == NULL){
+		// 	printf("breaks here?");
+		// 	return;
+		// }
 
 		printf("\nafter");
 		printf("\n::Semaphore Que::");
@@ -64,21 +65,22 @@ void V(semaphore_t **  semaphore)
 {
 	TCB_t * this;
 	(*semaphore)->count++;
-//	printf("\nsemaphore dec count: %d", (*semaphore)->count);
+	// printf("\n *******V******* semaphore dec count: %d", (*semaphore)->count);
 	if((*semaphore)->count <= 0){
+//	if(1){
 
-		printf("\nbefore");
-		printf("\n::Semaphore Que::");
-		printQue(&(*semaphore)->que);
-		printf("\n::Run Que::");
-		printQue(&RunQ);
+		 printf("\nbefore");
+		 printf("\n::Semaphore Que::");
+		 printQue(&(*semaphore)->que);
+		 printf("\n::Run Que::");
+		 printQue(&RunQ);
 
 
 		this = DelQueue(&(*semaphore)->que);
 		AddQueue(&RunQ,&this);
 
-		printf("\nsemaphore length: %d", getLength(&(*semaphore)->que));
-		printf("\nRunQ length: %d", getLength(&RunQ));
+		// printf("\nS length: %d", getLength(&(*semaphore)->que));
+		// printf("\nR length: %d", getLength(&RunQ));
 
 		printf("\nafter");
 		printf("\n::Semaphore Que::");
@@ -86,8 +88,9 @@ void V(semaphore_t **  semaphore)
 		printf("\n::Run Que::");
 		printQue(&RunQ);
 
-		yield();
+
 	}
+	yield();
 }
 
 
