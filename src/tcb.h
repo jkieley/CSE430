@@ -1,10 +1,9 @@
-//
-//  tcb.h
-//  operating.systems
-//
-//  Created by James Kieley on 10/29/15.
-//  Copyright © 2015 James Kieley. All rights reserved.
-//
+/*
+ ============================================================================
+ Name        : operating-systems-project-3.c
+ Author      : James Kieley, Alexis Montiel
+ ============================================================================
+ */
 
 #ifndef tcb_h
 #define tcb_h

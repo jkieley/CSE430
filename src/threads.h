@@ -1,11 +1,7 @@
 /*
  ============================================================================
- Name        : operating-systems-project-1.c
+ Name        : operating-systems-project-3.c
  Author      : James Kieley, Alexis Montiel
- Version     :
- Copyright   : Your copyright notice
- Description : Contains the main() function as intructed for Project 2. Please ensure that only 
-               one main function is included at compile and run time. 
  ============================================================================
  */
 

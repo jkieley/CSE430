@@ -1,3 +1,11 @@
+/*
+ ============================================================================
+ Name        : operating-systems-project-3.c
+ Author      : James Kieley, Alexis Montiel
+ ============================================================================
+ */
+
+
 #ifndef semaphore_h
 #define semaphore_h
 
@@ -26,15 +34,15 @@ void P(semaphore_t **  semaphore)
 {
 	TCB_t * this;
 	(*semaphore)->count--;
-	printf("\n *******P******* semaphore inc count: %d", (*semaphore)->count);
+	// printf("\n *******P******* semaphore inc count: %d", (*semaphore)->count);
 	if((*semaphore)->count < 0){
 	//if(0){
 
-		printf("\nbefore");
-		 printf("\n::Semaphore Que::");
-		 printQue(&(*semaphore)->que);
-		 printf("\n::Run Que::");
-		 printQue(&RunQ);
+		// printf("\nbefore");
+		//  printf("\n::Semaphore Que::");
+		//  printQue(&(*semaphore)->que);
+		//  printf("\n::Run Que::");
+		//  printQue(&RunQ);
 
 
 		this = DelQueue(&RunQ);
@@ -49,11 +57,11 @@ void P(semaphore_t **  semaphore)
 		// 	return;
 		// }
 
-		printf("\nafter");
-		printf("\n::Semaphore Que::");
-		printQue(&(*semaphore)->que);
-		printf("\n::Run Que::");
-		printQue(&RunQ);
+		// printf("\nafter");
+		// printf("\n::Semaphore Que::");
+		// printQue(&(*semaphore)->que);
+		// printf("\n::Run Que::");
+		// printQue(&RunQ);
 
 //		printf("from: %s, to: %s\n", this->name, RunQ->name);
 		swapcontext(&this->context,&RunQ->context);
@@ -69,11 +77,11 @@ void V(semaphore_t **  semaphore)
 	if((*semaphore)->count <= 0){
 //	if(1){
 
-		 printf("\nbefore");
-		 printf("\n::Semaphore Que::");
-		 printQue(&(*semaphore)->que);
-		 printf("\n::Run Que::");
-		 printQue(&RunQ);
+		 // printf("\nbefore");
+		 // printf("\n::Semaphore Que::");
+		 // printQue(&(*semaphore)->que);
+		 // printf("\n::Run Que::");
+		 // printQue(&RunQ);
 
 
 		this = DelQueue(&(*semaphore)->que);
@@ -82,11 +90,11 @@ void V(semaphore_t **  semaphore)
 		// printf("\nS length: %d", getLength(&(*semaphore)->que));
 		// printf("\nR length: %d", getLength(&RunQ));
 
-		printf("\nafter");
-		printf("\n::Semaphore Que::");
-		printQue(&(*semaphore)->que);
-		printf("\n::Run Que::");
-		printQue(&RunQ);
+		// printf("\nafter");
+		// printf("\n::Semaphore Que::");
+		// printQue(&(*semaphore)->que);
+		// printf("\n::Run Que::");
+		// printQue(&RunQ);
 
 
 	}

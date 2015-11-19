@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : operating-systems-project-1.c
+ Name        : operating-systems-project-3.c
  Author      : James Kieley, Alexis Montiel
  Version     :
  Copyright   : Your copyright notice
@@ -66,8 +66,8 @@ void loop1(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop1!!!!!!!!!!!!!! %d",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop1! %d",i);
+        printf("\nglobalCounter! %d",globalCounter);
         V(&sem);
     }
 }
@@ -89,8 +89,8 @@ void loop2(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop2!!!!!!!!!!!!!! %d",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop2! %d",i);
+        printf("\nglobalCounter! %d",globalCounter);
         V(&sem);
     }
 }
@@ -112,8 +112,8 @@ void loop3(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop3!!!!!!!!!!!!!! %d",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop3! %d",i);
+        printf("\nglobalCounter! %d",globalCounter);
         V(&sem);
     }
 }
@@ -135,8 +135,8 @@ void loop4(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop4!!!!!!!!!!!!!! %d",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop4! %d",i);
+        printf("\nglobalCounter! %d",globalCounter);
         V(&sem);
     }
 }
@@ -158,8 +158,8 @@ void loop5(){
 
         i++; // local variable
         globalCounter++; // global variable
-        printf("\nloop5!!!!!!!!!!!!!! %d",i);
-        printf("globalCounter! %d\n",globalCounter);
+        printf("\nloop5! %d",i);
+        printf("\nglobalCounter! %d",globalCounter);
         V(&sem);
     }
 }
