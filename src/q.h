@@ -71,6 +71,10 @@ void AddToEnd(TCB_t ** current, TCB_t ** toAdd)
 
 TCB_t * DelQueue(TCB_t ** head)
 {
+
+	if(*head == NULL){
+		return NULL;
+	}
 	TCB_t * deleted = *head;
     
     if ((*head)->next != NULL) {
